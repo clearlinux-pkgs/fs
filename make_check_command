@@ -1,0 +1,1 @@
+python /usr/bin/nosetests fs.tests -v || :
