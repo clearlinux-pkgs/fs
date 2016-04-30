@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 0.5.4
-Release  : 11
+Release  : 12
 URL      : https://pypi.python.org/packages/source/f/fs/fs-0.5.4.tar.gz
 Source0  : https://pypi.python.org/packages/source/f/fs/fs-0.5.4.tar.gz
 Summary  : Filesystem abstraction layer
