@@ -4,30 +4,38 @@
 #
 Name     : fs
 Version  : 0.5.4
-Release  : 21
-URL      : https://pypi.python.org/packages/source/f/fs/fs-0.5.4.tar.gz
-Source0  : https://pypi.python.org/packages/source/f/fs/fs-0.5.4.tar.gz
+Release  : 22
+URL      : http://pypi.debian.net/fs/fs-0.5.4.tar.gz
+Source0  : http://pypi.debian.net/fs/fs-0.5.4.tar.gz
 Summary  : Filesystem abstraction layer
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: fs-bin
 Requires: fs-python
+Requires: setuptools
+Requires: six
+BuildRequires : enum34-python
 BuildRequires : fuse-dev
 BuildRequires : nose
 BuildRequires : paramiko-python
 BuildRequires : pbr
 BuildRequires : pip
+BuildRequires : pyasn1.type.univ-python
 BuildRequires : pycrypto
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : six
-BuildRequires : six-python
 
 %description
-PyFilesystem
 ============
-PyFilesystem is an abstraction layer for *filesystems*. In the same way that Python's file-like objects provide a common way of accessing files, PyFilesystem provides a common way of accessing entire filesystems. You can write platform-independent code to work with local files, that also works with any of the supported filesystems (zip, ftp, S3 etc.).
+        
+        PyFilesystem is an abstraction layer for *filesystems*. In the same way that Python's file-like objects provide a common way of accessing files, PyFilesystem provides a common way of accessing entire filesystems. You can write platform-independent code to work with local files, that also works with any of the supported filesystems (zip, ftp, S3 etc.).
+        
+        Pyfilesystem works with Linux, Windows and Mac.
+        
+        Suported Filesystems
+        ---------------------
 
 %package bin
 Summary: bin components for the fs package.
@@ -40,7 +48,6 @@ bin components for the fs package.
 %package python
 Summary: python components for the fs package.
 Group: Default
-Requires: six-python
 
 %description python
 python components for the fs package.
@@ -50,6 +57,11 @@ python components for the fs package.
 %setup -q -n fs-0.5.4
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+export LANG=C
+export SOURCE_DATE_EPOCH=1503089383
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -59,9 +71,13 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python /usr/bin/nosetests fs.tests -v || :
 %install
+export SOURCE_DATE_EPOCH=1503089383
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
@@ -81,4 +97,5 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
