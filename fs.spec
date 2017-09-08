@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 0.5.4
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/fs/fs-0.5.4.tar.gz
 Source0  : http://pypi.debian.net/fs/fs-0.5.4.tar.gz
 Summary  : Filesystem abstraction layer
@@ -15,13 +15,10 @@ Requires: fs-legacypython
 Requires: fs-python
 Requires: setuptools
 Requires: six
-BuildRequires : enum34-python
 BuildRequires : fuse-dev
 BuildRequires : nose
-BuildRequires : paramiko-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : pyasn1.type.univ-python
 BuildRequires : pycrypto
 BuildRequires : python-dev
 BuildRequires : python3-dev
@@ -71,17 +68,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1504910764
+export SOURCE_DATE_EPOCH=1504910838
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-python /usr/bin/nosetests fs.tests -v || :
 %install
-export SOURCE_DATE_EPOCH=1504910764
+export SOURCE_DATE_EPOCH=1504910838
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
