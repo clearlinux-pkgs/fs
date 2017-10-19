@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 0.5.4
-Release  : 25
+Release  : 26
 URL      : http://pypi.debian.net/fs/fs-0.5.4.tar.gz
 Source0  : http://pypi.debian.net/fs/fs-0.5.4.tar.gz
 Summary  : Filesystem abstraction layer
