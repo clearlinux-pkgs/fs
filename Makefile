@@ -1,5 +1,5 @@
 PKG_NAME := fs
-URL := http://pypi.debian.net/fs/fs-0.5.4.tar.gz
-
+URL = https://github.com/PyFilesystem/pyfilesystem2/archive/v2.0.20.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
