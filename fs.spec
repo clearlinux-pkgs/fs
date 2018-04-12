@@ -4,13 +4,12 @@
 #
 Name     : fs
 Version  : 2.0.20
-Release  : 29
+Release  : 30
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.0.20.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.0.20.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
-Requires: fs-legacypython
 Requires: fs-python3
 Requires: fs-python
 Requires: appdirs
@@ -23,7 +22,6 @@ BuildRequires : pip
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
-BuildRequires : setuptools-legacypython
 BuildRequires : setuptools-python
 
 %description
@@ -36,15 +34,6 @@ Python's Filesystem abstraction layer.
 [![Coverage Status](https://coveralls.io/repos/github/PyFilesystem/pyfilesystem2/badge.svg)](https://coveralls.io/github/PyFilesystem/pyfilesystem2)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/30ad6445427349218425d93886ade9ee)](https://www.codacy.com/app/will-mcgugan/pyfilesystem2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PyFilesystem/pyfilesystem2&amp;utm_campaign=Badge_Grade)
 [![Code Health](https://landscape.io/github/PyFilesystem/pyfilesystem2/master/landscape.svg?style=flat)](https://landscape.io/github/PyFilesystem/pyfilesystem2/master)
-
-%package legacypython
-Summary: legacypython components for the fs package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the fs package.
-
 
 %package python
 Summary: python components for the fs package.
@@ -72,25 +61,18 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521668234
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1523558257
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1521668234
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
