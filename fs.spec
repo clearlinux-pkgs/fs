@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.0.20
-Release  : 34
+Release  : 35
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.0.20.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.0.20.tar.gz
 Summary  : No detailed summary available
