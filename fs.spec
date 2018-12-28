@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.1.3
-Release  : 46
+Release  : 47
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.1.3.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.1.3.tar.gz
 Summary  : No detailed summary available
