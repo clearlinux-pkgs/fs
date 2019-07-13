@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.4.8
-Release  : 59
+Release  : 60
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.8/pyfilesystem2-2.4.8.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.8/pyfilesystem2-2.4.8.tar.gz
 Summary  : No detailed summary available
