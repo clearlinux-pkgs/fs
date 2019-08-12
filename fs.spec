@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.4.10
-Release  : 62
+Release  : 63
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.10/pyfilesystem2-2.4.10.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.10/pyfilesystem2-2.4.10.tar.gz
 Summary  : No detailed summary available
@@ -13,11 +13,13 @@ License  : MIT
 Requires: fs-license = %{version}-%{release}
 Requires: fs-python = %{version}-%{release}
 Requires: fs-python3 = %{version}-%{release}
+Requires: appdirs
 Requires: enum34
 Requires: pytz
 Requires: setuptools
 Requires: six
 Requires: typing
+BuildRequires : appdirs
 BuildRequires : buildreq-distutils3
 BuildRequires : enum34
 BuildRequires : pytz
@@ -70,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564498186
+export SOURCE_DATE_EPOCH=1565632012
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
