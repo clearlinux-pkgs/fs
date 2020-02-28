@@ -4,10 +4,10 @@
 #
 Name     : fs
 Version  : 2.4.11
-Release  : 66
+Release  : 67
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.11/pyfilesystem2-2.4.11.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.11/pyfilesystem2-2.4.11.tar.gz
-Summary  : No detailed summary available
+Summary  : Python's filesystem abstraction layer
 Group    : Development/Tools
 License  : MIT
 Requires: fs-license = %{version}-%{release}
@@ -46,6 +46,7 @@ python components for the fs package.
 Summary: python3 components for the fs package.
 Group: Default
 Requires: python3-core
+Provides: pypi(fs)
 
 %description python3
 python3 components for the fs package.
@@ -53,13 +54,14 @@ python3 components for the fs package.
 
 %prep
 %setup -q -n pyfilesystem2-2.4.11
+cd %{_builddir}/pyfilesystem2-2.4.11
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567886676
+export SOURCE_DATE_EPOCH=1582925000
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -76,7 +78,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fs
-cp LICENSE %{buildroot}/usr/share/package-licenses/fs/LICENSE
+cp %{_builddir}/pyfilesystem2-2.4.11/LICENSE %{buildroot}/usr/share/package-licenses/fs/84803661eb311d56560c9fce4c19ce1d8db08753
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -87,7 +89,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/fs/LICENSE
+/usr/share/package-licenses/fs/84803661eb311d56560c9fce4c19ce1d8db08753
 
 %files python
 %defattr(-,root,root,-)
