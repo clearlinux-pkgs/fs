@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.4.12
-Release  : 73
+Release  : 74
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.12/pyfilesystem2-2.4.12.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.12/pyfilesystem2-2.4.12.tar.gz
 Summary  : Python's filesystem abstraction layer
