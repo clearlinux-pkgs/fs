@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.4.13
-Release  : 82
+Release  : 83
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.13/pyfilesystem2-2.4.13.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.13/pyfilesystem2-2.4.13.tar.gz
 Summary  : Python's filesystem abstraction layer
@@ -70,15 +70,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1617026326
+export SOURCE_DATE_EPOCH=1635728894
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
