@@ -4,7 +4,7 @@
 #
 Name     : fs
 Version  : 2.4.14
-Release  : 87
+Release  : 88
 URL      : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.14/pyfilesystem2-2.4.14.tar.gz
 Source0  : https://github.com/PyFilesystem/pyfilesystem2/archive/v2.4.14/pyfilesystem2-2.4.14.tar.gz
 Summary  : Python's filesystem abstraction layer
@@ -15,7 +15,6 @@ Requires: fs-python = %{version}-%{release}
 Requires: fs-python3 = %{version}-%{release}
 Requires: pypi(appdirs)
 BuildRequires : buildreq-distutils3
-BuildRequires : setuptools-python
 
 %description
 # PyFilesystem2
@@ -69,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641842196
+export SOURCE_DATE_EPOCH=1641949878
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
